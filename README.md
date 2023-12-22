@@ -42,11 +42,11 @@ This Sitemap Bundle will automatically append inside the sitemap.xml file all ro
     
     class SitemapController extends AbstractController
     {
-    private $params;
-    public function __construct(ParameterBagInterface $params)
-    {
-    $this->params = $params;
-    }
+        private $params;
+        public function __construct(ParameterBagInterface $params)
+        {
+            $this->params = $params;
+        }
     
         #[Route('/sitemap.xml', name: 'sitemap', options: ["sitemap" => false])]
         public function index()
