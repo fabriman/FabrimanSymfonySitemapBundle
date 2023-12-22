@@ -1,0 +1,14 @@
+parameters:
+  sitemap_file: "%kernel.project_dir%/public/Sitemap/sitemap.yaml"
+
+services:
+    _defaults:
+      autowire: true
+      autoconfigure: true
+
+    FabrimanSymfonySitemapBundle:
+      namespace: 'Fabriman\SymfonySitemapBundle\'
+      resource: '../src/'
+      exclude:
+        - '../src/DependencyInjection/'
+        - '../src/Kernel.php'

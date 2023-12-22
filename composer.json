@@ -1,0 +1,40 @@
+{
+  "name": "fabriman/symfony-sitemap",
+  "version": "1.0.0",
+  "type": "symfony-bundle",
+  "description": "Fabriman Symfony Sitemap",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.4",
+    "symfony/cache": "^5.4 || ^6.3 || ^7.0",
+    "symfony/config": "^5.4 || ^6.3 || ^7.0",
+    "symfony/dependency-injection": "^5.4 || ^6.3 || ^7.0",
+    "symfony/event-dispatcher": "^5.4 || ^6.3 || ^7.0",
+    "symfony/http-kernel": "^5.4 || ^6.3 || ^7.0",
+    "symfony/http-client": "^5.4 || ^6.3 || ^7.0"
+  },
+  "require-dev": {
+    "symfony/phpunit-bridge": "^v5.4 || ^v6.3 || ^7.0.1",
+    "symfony/framework-bundle": "^v5.4 || ^v6.3 || ^7.0.1",
+    "doctrine/doctrine-bundle": "^2.11",
+    "doctrine/doctrine-migrations-bundle": "^3.3",
+    "doctrine/orm": "^2.17",
+    "symfony/validator": "^v5.4 || ^v6.3 || ^7.0.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Fabriman\\SymfonySitemapBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Fabriman\\SymfonySitemapBundle\\Tests\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Fabrizio Manca",
+      "email": "contact@fabriziomanca.fr"
+    }
+  ]
+}
