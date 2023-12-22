@@ -4,9 +4,9 @@ namespace Fabriman\SymfonySitemapBundle;
 
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Fabriman\SymfonySitemapBundle\DependencyInjection\FabrimanSymfonySitemapBundleExtension;
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
-class FabrimanSymfonySitemapBundle extends Bundle
+class FabrimanSymfonySitemapBundle extends AbstractBundle
 {
     public function getPath(): string
     {
