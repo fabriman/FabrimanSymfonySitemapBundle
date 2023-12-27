@@ -7,6 +7,7 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
+use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Yaml\Yaml;
 
@@ -14,11 +15,13 @@ class SitemapSubscriber implements EventSubscriberInterface
 {
     private $router;
     private $params;
+    private $kernel;
 
-    public function __construct(RouterInterface $router, ParameterBagInterface $params)
+    public function __construct(RouterInterface $router, ParameterBagInterface $params, KernelInterface $kernel)
     {
         $this->router = $router;
         $this->params = $params;
+        $this->kernel = $kernel;
     }
 
     public static function getSubscribedEvents(): array
@@ -47,7 +50,7 @@ class SitemapSubscriber implements EventSubscriberInterface
             $route = $this->router->getRouteCollection()->get($_route);
 
             // Verify that this route is not inside the exclusion list
-            if (!in_array($_route, $exclude)) {
+            if (!in_array($_route, $exclude) && $this->kernel->getEnvironment() == 'prod') {
                 $filesystem = new Filesystem();
 
                 /*
