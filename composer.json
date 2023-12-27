@@ -1,6 +1,6 @@
 {
   "name": "fabriman/symfony-sitemap",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "symfony-bundle",
   "description": "Fabriman Symfony Sitemap",
   "license": "MIT",
