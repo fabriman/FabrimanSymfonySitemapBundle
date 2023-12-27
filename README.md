@@ -51,7 +51,6 @@ This Sitemap Bundle will automatically append inside the sitemap.xml file all ro
         #[Route('/sitemap.xml', name: 'sitemap', options: ["sitemap" => false])]
         public function index()
         {
-            // find published blog posts from db
             $response = new Response();
             $sitemap_file = $this->params->get("sitemap_file");
             $yaml_sitemap = Yaml::parseFile($sitemap_file);
